@@ -33,6 +33,7 @@ module Reform::Validation
   end
 
   def valid?
+    errors.clear
     Groups::Result.new(self.class.validation_groups).(@fields, errors, self)
   end
 end
